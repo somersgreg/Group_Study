@@ -1,9 +1,11 @@
 # group_study
 
 ## Start of Project MVP 
-- [ ] Create an App that displays the TL's and Students in our study group in a fun way
-- [ ] Provide a description of what our study group is
-- [ ] List the things you did well last unit (think about our discussions)
+- [x] Create an App that displays the TL's and Students in our study group in a fun way
+- [x] Provide a description of what our study group is
+        The success group.
+- [x] List the things you did well last unit (think about our discussions)
+        I did flex well.
 - [ ] List the things you want to improve (think about our discussions) 
 - [ ] Style the app
 

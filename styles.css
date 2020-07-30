@@ -1,210 +1,157 @@
 
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 40%;
+    bottom: -1px;
+    background-image: linear-gradient(to bottom, #86377b 20%, #27273c 80%);
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 100% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+   -webkit-animation: move-wave 3s;
+   -webkit-animation-delay: 1s;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
 
 /* OUR CSS STARTS HERE */
-
-
-.staff_container {
-    border: 1px solid red 
+.content{
+    display: flex;
+    justify-content: space-evenly;
 }
-
+/* .staff_container {
+    border: 1px solid red 
+} */
 .staff_list, a {
     text-decoration: none;
-    color: purple;
+    color: rgb(104, 231, 54);
     font-family: 'Comic Neue', cursive;
-    /* list-style-type: circle; */
+    list-style-type: circle;
 }
-
+.stars {
+    height: 120px;
+}
 .student_container {
-    border: 1px solid red;
-    font-family: 'Raleway', sans-serif;
+    /* border: 1px solid red;  */
+    font-family: 'Comic Neue', cursive;
 }
-
+.student_list, a {
+    list-style-type: circle;
+    color: rgb(104, 231, 54);
+}
 /*################################
 General Stylings
 ##################################*/
 
 body {
-    background: #0f4738;
-    font-size: 62.5%;
+    background: #86377b;
+    /* font-size: 62.5%; */
+   /*         -webkit-animation: pulsate 20s linear infinite;
+        -moz-animation: pulsate 20s linear infinite;
+        animation: pulsate 20s linear infinite;
+    }
+    
+    @-webkit-keyframes pulsate {
+        0% {background: black}
+        20% {background: red}
+        40% {background: blue}
+        60% {background: orange}
+        80% {background: green}
+        100% {background: black}
+    }
+    @-moz-keyframes pulsate {
+        0% {background: black}
+        20% {background: red}
+        40% {background: blue}
+        60% {background: orange}
+        80% {background: green}
+        100% {background: black}
+    }
+    @keyframes pulsate {
+        0% {background: black}
+        20% {background: red}
+        40% {background: blue}
+        60% {background: orange}
+        80% {background: green}
+        100% {background: black} */
 }
 
 header {
     background: #79d70f;
+    background-image: linear-gradient(yellow, #86377b);
     display: flex;
     justify-content: space-evenly;
     padding: 15px;
 }
-
-footer {
-    background: #d32626;
-    padding: 25px;
-}
-
-button {
-    background: #f5a31a;
-    color: white;
-    border: none;
-    margin: 10px 0px;
-    padding: 5px;
-    border-radius: 10px;
-    height: 50px;
-    width: 100px;
-}
-
-button:hover {
-    background: yellow;
-    color: black;
-    font-weight: bold;
-}
-
-h1, h2, h3 {
-    font-weight: bold;
-    font-family: 'Roboto', Sans-Serif;
-}
-
-h1, h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    font-family: 'Roboto', Sans-Serif;
-}
-
-a:hover {
-    color: purple;
-}
-
-p {
-    font-size: 1.2rem;
-    font-family: 'Lora', Serif;
-}
-
-form {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.icons {
-    height: 20px;
-    width: 20px;
-}
-
-
-/*################################
-Header
-##################################*/
-
-header h1 {
-    padding-left: 5px;
-}
-
-header nav a{
-    margin: 5px;
-}
-
-header nav button {
-    box-shadow: 0 5px 15px rgba(0,0,0,.07);
-}
-
-
-/*################################
-Log-In Section
-##################################*/
-
-.login-section {
-    background-image:url("https://www.adweek.com/wp-content/uploads/2019/03/dove-chocolate-supports-west-african-women-merchants-content-2019.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 400px;
+h1 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(green, magenta);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; }
+article {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    animation: color-change 1s infinite;
 }
-
-
-
-
-/*################################
-Main Section
-##################################*/
-
-.main-section h2 {
-    text-align: center;
-    padding: 25px 0;
-}
-
-.main-section h3 {
-    padding-bottom: 10px;
-}
-
-.main-section .content{
-    display: flex;
-    flex-wrap:wrap;
-}
-
-.main-section .content img {
-    height: 100%;
-    width: 500px;
-}
-
-.content-box {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 50px 0;
-}
-
-.content-box div:first-child {
-    width: 25%;
-}
-
-
-/*################################
-Footer
-##################################*/
-
-.section-title {
-    text-align: center;
-    padding: 15px 0;
-}
-
-footer div {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-}
-
-footer a:hover {
-    color: black;
-}
-
-footer .email-form {
-    display: flex;
-    justify-content: center;
-}
-
-footer form {
-    padding: 0 15px;
-}
-
-footer nav {
-    display: flex;
-    justify-content: center;
-}
-
-footer nav a {
-    padding: 0 15px;
-}
-
-.disclaimer {
-    font-size: 0.5rem;
-    font-weight: bold;
-    font-style: italic;
+@keyframes color-change {
+        0% { color: rgb(51, 255, 0); }
+        50% { color: rgb(255, 238, 0); }
+        100% { color: rgb(43, 255, 0); }
 }
